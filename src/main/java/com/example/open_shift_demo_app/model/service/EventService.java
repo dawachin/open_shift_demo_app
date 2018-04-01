@@ -37,6 +37,11 @@ public class EventService {
         return Optional.of(EventEntityFactory.asEventEntity(resultEvent));
     }
 
+    public Iterable<EventEntity> search() {
+        // 検索ロジック
+        return eventSearchLogic.doSearch();
+    }
+
 
     /** 登録処理 */
     public Optional<EventEntity> regist(EventEntity eventEntity) {
@@ -51,8 +56,6 @@ public class EventService {
 
 
     }
-
-    /** 更新処理 */
 
 
     /** 削除処理 */
