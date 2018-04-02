@@ -22,11 +22,15 @@ public class EventSearchLogic {
         // 検索
         Optional<EventEntity> resultEntity = eventRepository.findEventEntityById(eventId.getEventId());
 
-        if (isExest(eventId)) {
+        if (!isExest(eventId)) {
             throw new NotFoundEvenIdException(Optional.of(eventId));
         }
 
         return EventFactory.asEvent(resultEntity);
+    }
+
+    public Iterable<EventEntity> doSearch() {
+        return eventRepository.findAll();
     }
 
     public boolean isExest(EventId eventId) {

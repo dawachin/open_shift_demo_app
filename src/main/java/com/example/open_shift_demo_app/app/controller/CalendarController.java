@@ -1,8 +1,6 @@
 package com.example.open_shift_demo_app.app.controller;
 
 import com.example.open_shift_demo_app.app.exception.NotFoundEvenIdException;
-import com.example.open_shift_demo_app.model.domain.reference.Event;
-import com.example.open_shift_demo_app.model.domain.valueObject.event.*;
 import com.example.open_shift_demo_app.model.entity.EventEntity;
 import com.example.open_shift_demo_app.model.repository.EventRepository;
 import com.example.open_shift_demo_app.model.service.EventService;
@@ -26,8 +24,7 @@ public class CalendarController {
 
     @GetMapping("/events")
     public Iterable<EventEntity> getEvents() {
-        Iterable<EventEntity> eventEntities = repository.findAll();
-        return eventEntities;
+        return eventService.search();
     }
 
     @GetMapping("/event/{eventId}")
@@ -38,7 +35,12 @@ public class CalendarController {
 
     @PostMapping("/event")
     public Optional<EventEntity> postEvent(@RequestBody EventEntity eventEntity) {
-        return eventService.regist(eventEntity);
+        EventEntity tempEntity = new EventEntity(null,
+                eventEntity.getTitle(),
+                eventEntity.getDescription(),
+                eventEntity.getStartDate(),
+                eventEntity.getEndDate());
+        return eventService.regist(tempEntity);
     }
 
     @DeleteMapping("/event/{eventId}")

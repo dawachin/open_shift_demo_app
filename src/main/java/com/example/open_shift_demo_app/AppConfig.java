@@ -1,6 +1,5 @@
 package com.example.open_shift_demo_app;
 
-import com.example.open_shift_demo_app.model.domain.domainService.EventRegesterLogic;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
@@ -34,12 +33,12 @@ public class AppConfig {
 
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfo(
-                "HogeHoge System Web API",              // title
-                "HogeHoge System の Web API 仕様書",    // description
+                "Open Shift Demo Web API",              // title
+                "Open Shift を試すためのデモアプリ",    // description
                 "0.0.1",                                // version
                 "",                                     // terms of service url
-                "HogeHoge",                             // created by
-                "HogeHoge Co. Ltd",                     // license
+                "Hiroaki Ohwada",                             // created by
+                "",                     // license
                 "");                                    // license url
         return apiInfo;
     }
