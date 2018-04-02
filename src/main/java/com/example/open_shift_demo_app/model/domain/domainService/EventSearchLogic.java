@@ -25,7 +25,6 @@ public class EventSearchLogic {
         if (!isExest(eventId)) {
             throw new NotFoundEvenIdException(Optional.of(eventId));
         }
-
         return EventFactory.asEvent(resultEntity);
     }
 
