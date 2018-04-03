@@ -1,8 +1,8 @@
-package com.example.open_shift_demo_app.model.domain.valueObject.event;
+package com.example.open_shift_demo_app.model.domain.domainObject.valueObject.event;
 
 
-import com.example.open_shift_demo_app.model.domain.valueObject.ValueObjectAbstract;
-import com.example.open_shift_demo_app.model.domain.valueObject.ValueObjectInterface;
+import com.example.open_shift_demo_app.model.domain.domainObject.valueObject.ValueObjectAbstract;
+import com.example.open_shift_demo_app.model.domain.domainObject.valueObject.ValueObjectInterface;
 import lombok.Getter;
 
 

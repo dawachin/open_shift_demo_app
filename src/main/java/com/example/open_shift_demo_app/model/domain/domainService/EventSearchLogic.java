@@ -1,9 +1,9 @@
 package com.example.open_shift_demo_app.model.domain.domainService;
 
 import com.example.open_shift_demo_app.app.exception.NotFoundEvenIdException;
+import com.example.open_shift_demo_app.model.domain.domainObject.valueObject.event.EventId;
 import com.example.open_shift_demo_app.model.domain.reference.Event;
 import com.example.open_shift_demo_app.model.domain.reference.factory.EventFactory;
-import com.example.open_shift_demo_app.model.domain.valueObject.event.EventId;
 import com.example.open_shift_demo_app.model.entity.EventEntity;
 import com.example.open_shift_demo_app.model.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;

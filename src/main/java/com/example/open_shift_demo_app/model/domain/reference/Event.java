@@ -1,9 +1,7 @@
 package com.example.open_shift_demo_app.model.domain.reference;
 
-import com.example.open_shift_demo_app.model.domain.domainService.EventSearchLogic;
-import com.example.open_shift_demo_app.model.domain.valueObject.event.*;
-import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.open_shift_demo_app.model.domain.domainObject.valueObject.event.*;
+import lombok.Data;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;

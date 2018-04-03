@@ -1,12 +1,10 @@
-package com.example.open_shift_demo_app.model.domain.valueObject.event;
+package com.example.open_shift_demo_app.model.domain.domainObject.valueObject.event;
 
-import com.example.open_shift_demo_app.model.domain.valueObject.ValueObjectAbstract;
-import com.example.open_shift_demo_app.model.domain.valueObject.ValueObjectInterface;
+import com.example.open_shift_demo_app.model.domain.domainObject.valueObject.ValueObjectAbstract;
+import com.example.open_shift_demo_app.model.domain.domainObject.valueObject.ValueObjectInterface;
 import lombok.Getter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
-
-import java.util.Optional;
 
 public class EventId extends ValueObjectAbstract implements ValueObjectInterface {
 

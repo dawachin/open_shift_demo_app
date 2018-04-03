@@ -1,6 +1,6 @@
 package com.example.open_shift_demo_app.app.exception;
 
-import com.example.open_shift_demo_app.model.domain.valueObject.event.EventId;
+import com.example.open_shift_demo_app.model.domain.domainObject.valueObject.event.EventId;
 import lombok.Getter;
 
 import java.util.Optional;
