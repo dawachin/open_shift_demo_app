@@ -1,6 +1,6 @@
 package com.example.open_shift_demo_app.model.entity.factory;
 
-import com.example.open_shift_demo_app.model.domain.reference.Event;
+import com.example.open_shift_demo_app.model.domain.object.reference.Event;
 import com.example.open_shift_demo_app.model.entity.EventEntity;
 
 import java.util.Optional;

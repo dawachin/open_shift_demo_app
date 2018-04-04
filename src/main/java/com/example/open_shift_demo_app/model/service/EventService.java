@@ -1,11 +1,11 @@
 package com.example.open_shift_demo_app.model.service;
 
-import com.example.open_shift_demo_app.model.domain.domainObject.valueObject.event.EventId;
-import com.example.open_shift_demo_app.model.domain.domainService.EventDeleteLogic;
-import com.example.open_shift_demo_app.model.domain.domainService.EventRegesterLogic;
-import com.example.open_shift_demo_app.model.domain.domainService.EventSearchLogic;
-import com.example.open_shift_demo_app.model.domain.reference.Event;
-import com.example.open_shift_demo_app.model.domain.reference.factory.EventFactory;
+import com.example.open_shift_demo_app.model.domain.object.value.event.EventId;
+import com.example.open_shift_demo_app.model.domain.service.EventDeleteLogic;
+import com.example.open_shift_demo_app.model.domain.service.EventRegesterLogic;
+import com.example.open_shift_demo_app.model.domain.service.EventSearchLogic;
+import com.example.open_shift_demo_app.model.domain.object.reference.Event;
+import com.example.open_shift_demo_app.model.domain.object.reference.factory.EventFactory;
 import com.example.open_shift_demo_app.model.entity.EventEntity;
 import com.example.open_shift_demo_app.model.entity.factory.EventEntityFactory;
 import org.springframework.beans.factory.annotation.Autowired;

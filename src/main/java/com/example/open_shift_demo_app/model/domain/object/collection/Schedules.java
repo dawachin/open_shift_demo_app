@@ -1,6 +1,6 @@
-package com.example.open_shift_demo_app.model.domain.domainObject.collectionObject;
+package com.example.open_shift_demo_app.model.domain.object.collection;
 
-import com.example.open_shift_demo_app.model.domain.reference.Schedule;
+import com.example.open_shift_demo_app.model.domain.object.reference.content.plan.Schedule;
 import lombok.Getter;
 
 import java.util.ArrayList;

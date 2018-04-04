@@ -1,6 +1,6 @@
-package com.example.open_shift_demo_app.model.domain.reference.tool;
+package com.example.open_shift_demo_app.model.domain.object.reference.tool;
 
-import com.example.open_shift_demo_app.model.domain.reference.Content;
+import com.example.open_shift_demo_app.model.domain.object.reference.content.Content;
 
 public class Pen {
 

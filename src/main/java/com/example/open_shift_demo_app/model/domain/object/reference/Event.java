@@ -1,6 +1,6 @@
-package com.example.open_shift_demo_app.model.domain.reference;
+package com.example.open_shift_demo_app.model.domain.object.reference;
 
-import com.example.open_shift_demo_app.model.domain.domainObject.valueObject.event.*;
+import com.example.open_shift_demo_app.model.domain.object.value.event.*;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 

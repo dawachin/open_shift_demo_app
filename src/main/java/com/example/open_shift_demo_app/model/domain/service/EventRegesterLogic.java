@@ -1,6 +1,6 @@
-package com.example.open_shift_demo_app.model.domain.domainService;
+package com.example.open_shift_demo_app.model.domain.service;
 
-import com.example.open_shift_demo_app.model.domain.reference.Event;
+import com.example.open_shift_demo_app.model.domain.object.reference.Event;
 import com.example.open_shift_demo_app.model.entity.EventEntity;
 import com.example.open_shift_demo_app.model.entity.factory.EventEntityFactory;
 import com.example.open_shift_demo_app.model.repository.EventRepository;
