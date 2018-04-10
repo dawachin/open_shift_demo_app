@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/calendar")
+@RequestMapping("calvendar")
 public class CalendarController {
 
     @Autowired
@@ -22,18 +22,18 @@ public class CalendarController {
     @Autowired
     EventService eventService;
 
-    @GetMapping("/events")
+    @GetMapping("events")
     public Iterable<EventEntity> getEvents() {
         return eventService.search();
     }
 
-    @GetMapping("/event/{eventId}")
+    @GetMapping("event/{eventId}")
     public Optional<EventEntity> getEvent(@PathVariable String eventId) {
-        Optional<EventEntity> rtnEntity = eventService.search(eventId);
-        return rtnEntity;
+        Optional<EventEntity> eventEntity = eventService.search(eventId);
+        return eventEntity;
     }
 
-    @PostMapping("/event")
+    @PostMapping("event")
     public Optional<EventEntity> postEvent(@RequestBody EventEntity eventEntity) {
         EventEntity tempEntity = new EventEntity(null,
                 eventEntity.getTitle(),
@@ -43,17 +43,17 @@ public class CalendarController {
         return eventService.regist(tempEntity);
     }
 
-    @DeleteMapping("/event/{eventId}")
+    @DeleteMapping("/vent/{eventId}")
     public Optional<String> deleteEvent(@PathVariable String eventId) {
-        Optional<String> rtnEntity = eventService.delete(eventId);
-        return rtnEntity;
+        Optional<String> deleteResult = eventService.delete(eventId);
+        return deleteResult;
     }
 
     @ExceptionHandler(NotFoundEvenIdException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ResponseBody
     public Map<String, Object> handleError(NotFoundEvenIdException e) {
-        Map<String, Object> errorMap = new HashMap<String, Object>();
+        Map<String, Object> errorMap = new HashMap<>();
         errorMap.put("message", e.getMessage());
         errorMap.put("status", HttpStatus.NOT_FOUND);
         return errorMap;
