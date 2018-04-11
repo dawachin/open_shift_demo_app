@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("calvendar")
+@RequestMapping("calendar")
 public class CalendarController {
 
     @Autowired
