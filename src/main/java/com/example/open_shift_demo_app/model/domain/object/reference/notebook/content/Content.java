@@ -1,4 +1,4 @@
-package com.example.open_shift_demo_app.model.domain.object.reference.content;
+package com.example.open_shift_demo_app.model.domain.object.reference.notebook.content;
 
 /**
  *

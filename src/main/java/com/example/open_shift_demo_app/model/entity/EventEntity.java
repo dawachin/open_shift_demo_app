@@ -52,4 +52,10 @@ public class EventEntity {
     @Column(name="END_DATE")
     private Date endDate;
 
+    /** スケジュール　場所 */
+    @Getter
+    @Setter
+    @Column(name="LOCATION")
+    private String location;
+
 }
