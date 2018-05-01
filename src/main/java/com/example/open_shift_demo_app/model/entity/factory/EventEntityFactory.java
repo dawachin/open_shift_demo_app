@@ -12,7 +12,8 @@ public class EventEntityFactory {
                 event.get().getTitle().get().getTitle(),
                 event.get().getDescription().get().getDescription(),
                 event.get().getStartDate().get().getStartDate(),
-                event.get().getEndDate().get().getEndDate());
+                event.get().getEndDate().get().getEndDate(),
+                "Location");
 
     }
 

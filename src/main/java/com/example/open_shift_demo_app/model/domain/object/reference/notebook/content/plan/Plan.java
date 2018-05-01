@@ -29,6 +29,7 @@ public class Plan implements Content {
 
     public Plan(Title title){
         this.title = title;
+        this.description = new Description("試験的べた書き説明");
     }
 
 }

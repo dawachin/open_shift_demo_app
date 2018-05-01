@@ -40,18 +40,18 @@ public class Schedule {
         public Builder(){
         }
 
-        Builder startDateIs(StartDate startDate){
+        public Builder startDateIs(StartDate startDate){
             this.startDate = startDate;
             return this;
         }
-        Builder endDateIs(EndDate endDate) {
+        public Builder endDateIs(EndDate endDate) {
             if (startDate == null) {
                 // 開始日時が設定差入れていなかった時
             }
             this.endDate = endDate;
             return this;
         }
-        Builder locationIs(Location location) {
+        public Builder locationIs(Location location) {
             this.location = location;
             return this;
         }

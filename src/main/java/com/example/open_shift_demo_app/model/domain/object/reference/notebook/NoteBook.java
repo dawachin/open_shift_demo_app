@@ -18,8 +18,9 @@ public class NoteBook {
     private Binder binder;
 
     /** コンストラクタ */
-    private NoteBook(Owner owner) {
+    public NoteBook(Owner owner) {
         this.owner = owner;
+        this.binder = new Binder(owner);
     }
 
 

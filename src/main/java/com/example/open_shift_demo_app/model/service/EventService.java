@@ -39,7 +39,7 @@ public class EventService {
 
     /**
      * 参照　複数
-     * @return
+     * @return Iterable<EventEntity>
      */
     public Iterable<EventEntity> search() {
         // 検索ロジック

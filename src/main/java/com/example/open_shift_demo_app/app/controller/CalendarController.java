@@ -24,7 +24,8 @@ public class CalendarController {
 
     @GetMapping("/events")
     public Iterable<EventEntity> getEvents() {
-        return eventService.search();
+        Iterable<EventEntity> eventEntities = repository.findAll();
+        return eventEntities;
     }
 
     @GetMapping("/event/{eventId}")
@@ -35,12 +36,7 @@ public class CalendarController {
 
     @PostMapping("/event")
     public Optional<EventEntity> postEvent(@RequestBody EventEntity eventEntity) {
-        EventEntity tempEntity = new EventEntity(null,
-                eventEntity.getTitle(),
-                eventEntity.getDescription(),
-                eventEntity.getStartDate(),
-                eventEntity.getEndDate());
-        return eventService.regist(tempEntity);
+        return eventService.regist(eventEntity);
     }
 
     @DeleteMapping("/event/{eventId}")

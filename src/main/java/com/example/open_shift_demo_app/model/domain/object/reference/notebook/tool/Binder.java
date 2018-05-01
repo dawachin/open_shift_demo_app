@@ -1,25 +1,28 @@
 package com.example.open_shift_demo_app.model.domain.object.reference.notebook.tool;
 
-import com.example.open_shift_demo_app.model.domain.object.collection.Pages;
-import com.example.open_shift_demo_app.model.domain.object.collection.Plans;
+import com.example.open_shift_demo_app.model.domain.object.reference.Owner;
 import com.example.open_shift_demo_app.model.domain.object.reference.notebook.content.Content;
-import com.example.open_shift_demo_app.model.domain.object.reference.notebook.content.plan.Plan;
-import com.example.open_shift_demo_app.model.domain.object.reference.notebook.tool.refill.Calendar;
 import com.example.open_shift_demo_app.model.domain.object.reference.notebook.tool.refill.Refill;
 
-import java.util.ArrayList;
+import java.util.Map;
 
 public class Binder {
 
-    /** 綴じているページ */
-    private Pages pages;
+    /** 綴じられているリフィル */
+    private Map<PageIndex, Refill> bindingRefill;
 
-    /** 綴じているページ */
-    private Index index;
+    /** コンストラクタ */
+    public Binder(Owner owner) {
+        PageIndex.values();
+        for (PageIndex pageIndex : PageIndex.values()) {
+            bindingRefill.put(pageIndex, pageIndex.getRefill(owner));
+        }
+    }
+
 
     /** 指定されたコンテンツを返す */
-    public Refill open(Content content) {
-        return new Calendar(new Plans(new ArrayList<Plan>()));
+    public Refill open(PageIndex pageIndex) {
+        return bindingRefill.get(pageIndex);
     }
 
     /** 指定されたコンテンツを綴じる */
