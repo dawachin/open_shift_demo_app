@@ -28,10 +28,6 @@ public enum PageIndex {
         }
     };
 
-    private PageIndex(){
-
-    }
-
     public abstract Refill getRefill(Owner owner);
 
 }

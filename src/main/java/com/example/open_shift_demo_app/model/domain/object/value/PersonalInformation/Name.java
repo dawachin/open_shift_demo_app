@@ -3,6 +3,7 @@ package com.example.open_shift_demo_app.model.domain.object.value.PersonalInform
 import com.example.open_shift_demo_app.model.domain.object.value.ValueObjectAbstract;
 import com.example.open_shift_demo_app.model.domain.object.value.ValueObjectInterface;
 
+
 public class Name extends ValueObjectAbstract implements ValueObjectInterface{
 
     private String NAME = "名前";

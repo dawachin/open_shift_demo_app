@@ -1,7 +1,6 @@
 package com.example.open_shift_demo_app.model.domain.object.reference.notebook.tool;
 
 import com.example.open_shift_demo_app.model.domain.object.reference.Owner;
-import com.example.open_shift_demo_app.model.domain.object.reference.notebook.content.Content;
 import com.example.open_shift_demo_app.model.domain.object.reference.notebook.tool.refill.Refill;
 
 import java.util.Map;
@@ -26,7 +25,7 @@ public class Binder {
     }
 
     /** 指定されたコンテンツを綴じる */
-    public void close(Content content) {
-
+    public void close(Refill refill, Pencil pencil) {
+        refill.write(pencil);
     }
 }
