@@ -7,6 +7,11 @@ import java.util.Optional;
 
 public class EventEntityFactory {
 
+    /**
+     * EventクラスからEventEntityクラスに詰め替えます
+     * @param event
+     * @return {@link EventEntity}
+     */
     public static EventEntity asEventEntity(Optional<Event> event) {
         return new EventEntity(event.get().getEventId().get().getEventId(),
                 event.get().getTitle().get().getTitle(),

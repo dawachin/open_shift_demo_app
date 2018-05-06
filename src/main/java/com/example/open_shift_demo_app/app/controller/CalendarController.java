@@ -4,6 +4,8 @@ import com.example.open_shift_demo_app.app.exception.NotFoundEvenIdException;
 import com.example.open_shift_demo_app.model.entity.EventEntity;
 import com.example.open_shift_demo_app.model.repository.EventRepository;
 import com.example.open_shift_demo_app.model.service.EventService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,9 @@ import java.util.Optional;
 @RequestMapping("/calendar")
 public class CalendarController {
 
+    private static final Logger logger = LoggerFactory.getLogger(CalendarController.class);
+
+
     @Autowired
     EventRepository repository;
 
@@ -24,12 +29,14 @@ public class CalendarController {
 
     @GetMapping("/events")
     public Iterable<EventEntity> getEvents() {
+        logger.info("予定：全件検索が行われました。");
         return eventService.search();
     }
 
     @GetMapping("/event/{eventId}")
     public Optional<EventEntity> getEvent(@PathVariable String eventId) {
         Optional<EventEntity> rtnEntity = eventService.search(eventId);
+        logger.info("予定：ID検索が行われました。ID = {}", eventId);
         return rtnEntity;
     }
 

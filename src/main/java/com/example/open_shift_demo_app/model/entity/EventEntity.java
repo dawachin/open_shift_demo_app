@@ -16,7 +16,7 @@ import java.util.Date;
  *
  * */
 @AllArgsConstructor
-@Entity
+@Entity(name = "T_EVENT")
 public class EventEntity {
 
     public EventEntity(){};

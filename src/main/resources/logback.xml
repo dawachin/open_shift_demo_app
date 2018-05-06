@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- <include resource="org/springframework/boot/logging/logback/base.xml" />-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+
+    <!-- ファイルに出力するロガー -->
+
+    <!--
+     LOG_PATH は spring boot が設定している。logging.path から取得される値。
+     project 名は -Dproject= で java 起動時に指定。
+     -->
+    <!-- <property name="APP_LOG_FILENAME" value="${LOG_PATH}/log/${project}.log"/> -->
+    <property name="APP_LOG_FILENAME" value="log/app/app.log"/>
+    <!-- <property name="APP_LOG_FILENAME" value="log/%X{log_file_path}/app.log"/> -->
+
+    <appender name="APPLICATION_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_FILENAME}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${APP_LOG_FILENAME}.%d{yyyyMMdd}.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t]%X{request_thread} %logger{45}:%L - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ASYNC_APPLICATION_LOG_FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="APPLICATION_LOG_FILE"/>
+    </appender>
+
+    <!--
+    <appender name="FILE_DYNAMIC_PATH" class="com.example.open_shift_demo_app.app.logging.MyRollingFileAppender">
+        <rollingPolicy class="com.example.open_shift_demo_app.app.logging.MyTimeBasedRollingPolicy">
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender> -->
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="APPLICATION_LOG_FILE"/>
+        <!-- <appender-ref ref="FILE_DYNAMIC_PATH"/> -->
+    </root>
+
+
+</configuration>
